@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fund_management/config/theme/extensions.dart';
-import 'package:fund_management/features/home/presentation/screens/home_screen.dart';
+import 'package:fund_management/config/router/app_router.dart';
 
 import 'config/theme/app_theme.dart';
 
@@ -9,19 +8,9 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: AppTheme().appTheme().primaryColor,
-
-          title: Text(
-            'BTG',
-            style: TextStyle(color: context.colorScheme.onPrimary),
-          ),
-        ),
-        body: HomeScreen(),
-      ),
+      routerConfig: appRouter,
       theme: AppTheme().appTheme(),
     );
   }
