@@ -33,7 +33,8 @@ abstract class FundTransactionResponse with _$FundTransactionResponse {
     required String fundName,
     required double transactionCost,
     required String startDate,
-    required String endDate,
+    String? endDate,
+    required String notificationMethod,
     required bool isActive,
   }) = _FundTransactionResponse;
 
@@ -47,6 +48,7 @@ abstract class FundTransactionResponse with _$FundTransactionResponse {
     transactionCost: transactionCost,
     startDate: startDate,
     endDate: endDate,
+    notificationMethod: notificationMethod,
     isActive: isActive,
   );
 }

@@ -11,7 +11,7 @@ abstract class FundResponse with _$FundResponse {
     required int id,
     required String name,
     required String category,
-    required int minimumQuantity,
+    required double minimumQuantity,
   }) = _FundResponse;
 
   factory FundResponse.fromJson(Map<String, dynamic> json) =>

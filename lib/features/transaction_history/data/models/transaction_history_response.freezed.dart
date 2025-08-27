@@ -213,22 +213,22 @@ String toString() {
 /// @nodoc
 mixin _$FundTransactionResponse {
 
- int get fundTransactionId; int get fundId; String get fundName; double get transactionCost; String get startDate; String get endDate; bool get isActive;
+ int get fundTransactionId; int get fundId; String get fundName; double get transactionCost; String get startDate; String? get endDate; String get notificationMethod; bool get isActive;
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FundTransactionResponse&&(identical(other.fundTransactionId, fundTransactionId) || other.fundTransactionId == fundTransactionId)&&(identical(other.fundId, fundId) || other.fundId == fundId)&&(identical(other.fundName, fundName) || other.fundName == fundName)&&(identical(other.transactionCost, transactionCost) || other.transactionCost == transactionCost)&&(identical(other.startDate, startDate) || other.startDate == startDate)&&(identical(other.endDate, endDate) || other.endDate == endDate)&&(identical(other.isActive, isActive) || other.isActive == isActive));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is FundTransactionResponse&&(identical(other.fundTransactionId, fundTransactionId) || other.fundTransactionId == fundTransactionId)&&(identical(other.fundId, fundId) || other.fundId == fundId)&&(identical(other.fundName, fundName) || other.fundName == fundName)&&(identical(other.transactionCost, transactionCost) || other.transactionCost == transactionCost)&&(identical(other.startDate, startDate) || other.startDate == startDate)&&(identical(other.endDate, endDate) || other.endDate == endDate)&&(identical(other.notificationMethod, notificationMethod) || other.notificationMethod == notificationMethod)&&(identical(other.isActive, isActive) || other.isActive == isActive));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,fundTransactionId,fundId,fundName,transactionCost,startDate,endDate,isActive);
+int get hashCode => Object.hash(runtimeType,fundTransactionId,fundId,fundName,transactionCost,startDate,endDate,notificationMethod,isActive);
 
 @override
 String toString() {
-  return 'FundTransactionResponse(fundTransactionId: $fundTransactionId, fundId: $fundId, fundName: $fundName, transactionCost: $transactionCost, startDate: $startDate, endDate: $endDate, isActive: $isActive)';
+  return 'FundTransactionResponse(fundTransactionId: $fundTransactionId, fundId: $fundId, fundName: $fundName, transactionCost: $transactionCost, startDate: $startDate, endDate: $endDate, notificationMethod: $notificationMethod, isActive: $isActive)';
 }
 
 
@@ -315,10 +315,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int fundTransactionId,  int fundId,  String fundName,  double transactionCost,  String startDate,  String endDate,  bool isActive)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int fundTransactionId,  int fundId,  String fundName,  double transactionCost,  String startDate,  String? endDate,  String notificationMethod,  bool isActive)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _FundTransactionResponse() when $default != null:
-return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transactionCost,_that.startDate,_that.endDate,_that.isActive);case _:
+return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transactionCost,_that.startDate,_that.endDate,_that.notificationMethod,_that.isActive);case _:
   return orElse();
 
 }
@@ -336,10 +336,10 @@ return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transa
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int fundTransactionId,  int fundId,  String fundName,  double transactionCost,  String startDate,  String endDate,  bool isActive)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int fundTransactionId,  int fundId,  String fundName,  double transactionCost,  String startDate,  String? endDate,  String notificationMethod,  bool isActive)  $default,) {final _that = this;
 switch (_that) {
 case _FundTransactionResponse():
-return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transactionCost,_that.startDate,_that.endDate,_that.isActive);case _:
+return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transactionCost,_that.startDate,_that.endDate,_that.notificationMethod,_that.isActive);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -356,10 +356,10 @@ return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transa
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int fundTransactionId,  int fundId,  String fundName,  double transactionCost,  String startDate,  String endDate,  bool isActive)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int fundTransactionId,  int fundId,  String fundName,  double transactionCost,  String startDate,  String? endDate,  String notificationMethod,  bool isActive)?  $default,) {final _that = this;
 switch (_that) {
 case _FundTransactionResponse() when $default != null:
-return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transactionCost,_that.startDate,_that.endDate,_that.isActive);case _:
+return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transactionCost,_that.startDate,_that.endDate,_that.notificationMethod,_that.isActive);case _:
   return null;
 
 }
@@ -371,7 +371,7 @@ return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transa
 @JsonSerializable(createToJson: false)
 
 class _FundTransactionResponse extends FundTransactionResponse {
-  const _FundTransactionResponse({required this.fundTransactionId, required this.fundId, required this.fundName, required this.transactionCost, required this.startDate, required this.endDate, required this.isActive}): super._();
+  const _FundTransactionResponse({required this.fundTransactionId, required this.fundId, required this.fundName, required this.transactionCost, required this.startDate, this.endDate, required this.notificationMethod, required this.isActive}): super._();
   factory _FundTransactionResponse.fromJson(Map<String, dynamic> json) => _$FundTransactionResponseFromJson(json);
 
 @override final  int fundTransactionId;
@@ -379,7 +379,8 @@ class _FundTransactionResponse extends FundTransactionResponse {
 @override final  String fundName;
 @override final  double transactionCost;
 @override final  String startDate;
-@override final  String endDate;
+@override final  String? endDate;
+@override final  String notificationMethod;
 @override final  bool isActive;
 
 
@@ -387,16 +388,16 @@ class _FundTransactionResponse extends FundTransactionResponse {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FundTransactionResponse&&(identical(other.fundTransactionId, fundTransactionId) || other.fundTransactionId == fundTransactionId)&&(identical(other.fundId, fundId) || other.fundId == fundId)&&(identical(other.fundName, fundName) || other.fundName == fundName)&&(identical(other.transactionCost, transactionCost) || other.transactionCost == transactionCost)&&(identical(other.startDate, startDate) || other.startDate == startDate)&&(identical(other.endDate, endDate) || other.endDate == endDate)&&(identical(other.isActive, isActive) || other.isActive == isActive));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FundTransactionResponse&&(identical(other.fundTransactionId, fundTransactionId) || other.fundTransactionId == fundTransactionId)&&(identical(other.fundId, fundId) || other.fundId == fundId)&&(identical(other.fundName, fundName) || other.fundName == fundName)&&(identical(other.transactionCost, transactionCost) || other.transactionCost == transactionCost)&&(identical(other.startDate, startDate) || other.startDate == startDate)&&(identical(other.endDate, endDate) || other.endDate == endDate)&&(identical(other.notificationMethod, notificationMethod) || other.notificationMethod == notificationMethod)&&(identical(other.isActive, isActive) || other.isActive == isActive));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,fundTransactionId,fundId,fundName,transactionCost,startDate,endDate,isActive);
+int get hashCode => Object.hash(runtimeType,fundTransactionId,fundId,fundName,transactionCost,startDate,endDate,notificationMethod,isActive);
 
 @override
 String toString() {
-  return 'FundTransactionResponse(fundTransactionId: $fundTransactionId, fundId: $fundId, fundName: $fundName, transactionCost: $transactionCost, startDate: $startDate, endDate: $endDate, isActive: $isActive)';
+  return 'FundTransactionResponse(fundTransactionId: $fundTransactionId, fundId: $fundId, fundName: $fundName, transactionCost: $transactionCost, startDate: $startDate, endDate: $endDate, notificationMethod: $notificationMethod, isActive: $isActive)';
 }
 
 

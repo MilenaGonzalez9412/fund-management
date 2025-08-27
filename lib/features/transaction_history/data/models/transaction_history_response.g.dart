@@ -27,6 +27,7 @@ _FundTransactionResponse _$FundTransactionResponseFromJson(
   fundName: json['fundName'] as String,
   transactionCost: (json['transactionCost'] as num).toDouble(),
   startDate: json['startDate'] as String,
-  endDate: json['endDate'] as String,
+  endDate: json['endDate'] as String?,
+  notificationMethod: json['notificationMethod'] as String,
   isActive: json['isActive'] as bool,
 );

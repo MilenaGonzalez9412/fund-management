@@ -19,7 +19,8 @@ abstract class FundTransaction with _$FundTransaction {
     required String fundName,
     required double transactionCost,
     required String startDate,
-    required String endDate,
+    String? endDate,
+    required String notificationMethod,
     required bool isActive,
   }) = _FundTransaction;
 }

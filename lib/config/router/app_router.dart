@@ -15,7 +15,8 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/fund-subscription',
       name: FundSubscriptionScreen.name,
-      builder: (context, state) => FundSubscriptionScreen(),
+      builder:
+          (context, state) => FundSubscriptionScreen(user: state.extra as User),
     ),
     GoRoute(
       path: '/transaction-history',
@@ -24,6 +25,6 @@ final appRouter = GoRouter(
           (context, state) =>
               TransactionHistoryScreen(user: state.extra as User),
     ),
-    GoRoute(path: '/', redirect: (_, __) => '/'),
+    // GoRoute(path: '/', redirect: (_, __) => '/'),
   ],
 );

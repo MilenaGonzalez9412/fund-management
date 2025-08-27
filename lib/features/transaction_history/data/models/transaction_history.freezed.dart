@@ -283,7 +283,7 @@ as List<FundTransaction>,
 /// @nodoc
 mixin _$FundTransaction {
 
- int get fundTransactionId; int get fundId; String get fundName; double get transactionCost; String get startDate; String get endDate; bool get isActive;
+ int get fundTransactionId; int get fundId; String get fundName; double get transactionCost; String get startDate; String? get endDate; String get notificationMethod; bool get isActive;
 /// Create a copy of FundTransaction
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -294,16 +294,16 @@ $FundTransactionCopyWith<FundTransaction> get copyWith => _$FundTransactionCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FundTransaction&&(identical(other.fundTransactionId, fundTransactionId) || other.fundTransactionId == fundTransactionId)&&(identical(other.fundId, fundId) || other.fundId == fundId)&&(identical(other.fundName, fundName) || other.fundName == fundName)&&(identical(other.transactionCost, transactionCost) || other.transactionCost == transactionCost)&&(identical(other.startDate, startDate) || other.startDate == startDate)&&(identical(other.endDate, endDate) || other.endDate == endDate)&&(identical(other.isActive, isActive) || other.isActive == isActive));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is FundTransaction&&(identical(other.fundTransactionId, fundTransactionId) || other.fundTransactionId == fundTransactionId)&&(identical(other.fundId, fundId) || other.fundId == fundId)&&(identical(other.fundName, fundName) || other.fundName == fundName)&&(identical(other.transactionCost, transactionCost) || other.transactionCost == transactionCost)&&(identical(other.startDate, startDate) || other.startDate == startDate)&&(identical(other.endDate, endDate) || other.endDate == endDate)&&(identical(other.notificationMethod, notificationMethod) || other.notificationMethod == notificationMethod)&&(identical(other.isActive, isActive) || other.isActive == isActive));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,fundTransactionId,fundId,fundName,transactionCost,startDate,endDate,isActive);
+int get hashCode => Object.hash(runtimeType,fundTransactionId,fundId,fundName,transactionCost,startDate,endDate,notificationMethod,isActive);
 
 @override
 String toString() {
-  return 'FundTransaction(fundTransactionId: $fundTransactionId, fundId: $fundId, fundName: $fundName, transactionCost: $transactionCost, startDate: $startDate, endDate: $endDate, isActive: $isActive)';
+  return 'FundTransaction(fundTransactionId: $fundTransactionId, fundId: $fundId, fundName: $fundName, transactionCost: $transactionCost, startDate: $startDate, endDate: $endDate, notificationMethod: $notificationMethod, isActive: $isActive)';
 }
 
 
@@ -314,7 +314,7 @@ abstract mixin class $FundTransactionCopyWith<$Res>  {
   factory $FundTransactionCopyWith(FundTransaction value, $Res Function(FundTransaction) _then) = _$FundTransactionCopyWithImpl;
 @useResult
 $Res call({
- int fundTransactionId, int fundId, String fundName, double transactionCost, String startDate, String endDate, bool isActive
+ int fundTransactionId, int fundId, String fundName, double transactionCost, String startDate, String? endDate, String notificationMethod, bool isActive
 });
 
 
@@ -331,14 +331,15 @@ class _$FundTransactionCopyWithImpl<$Res>
 
 /// Create a copy of FundTransaction
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? fundTransactionId = null,Object? fundId = null,Object? fundName = null,Object? transactionCost = null,Object? startDate = null,Object? endDate = null,Object? isActive = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? fundTransactionId = null,Object? fundId = null,Object? fundName = null,Object? transactionCost = null,Object? startDate = null,Object? endDate = freezed,Object? notificationMethod = null,Object? isActive = null,}) {
   return _then(_self.copyWith(
 fundTransactionId: null == fundTransactionId ? _self.fundTransactionId : fundTransactionId // ignore: cast_nullable_to_non_nullable
 as int,fundId: null == fundId ? _self.fundId : fundId // ignore: cast_nullable_to_non_nullable
 as int,fundName: null == fundName ? _self.fundName : fundName // ignore: cast_nullable_to_non_nullable
 as String,transactionCost: null == transactionCost ? _self.transactionCost : transactionCost // ignore: cast_nullable_to_non_nullable
 as double,startDate: null == startDate ? _self.startDate : startDate // ignore: cast_nullable_to_non_nullable
-as String,endDate: null == endDate ? _self.endDate : endDate // ignore: cast_nullable_to_non_nullable
+as String,endDate: freezed == endDate ? _self.endDate : endDate // ignore: cast_nullable_to_non_nullable
+as String?,notificationMethod: null == notificationMethod ? _self.notificationMethod : notificationMethod // ignore: cast_nullable_to_non_nullable
 as String,isActive: null == isActive ? _self.isActive : isActive // ignore: cast_nullable_to_non_nullable
 as bool,
   ));
@@ -425,10 +426,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int fundTransactionId,  int fundId,  String fundName,  double transactionCost,  String startDate,  String endDate,  bool isActive)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int fundTransactionId,  int fundId,  String fundName,  double transactionCost,  String startDate,  String? endDate,  String notificationMethod,  bool isActive)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _FundTransaction() when $default != null:
-return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transactionCost,_that.startDate,_that.endDate,_that.isActive);case _:
+return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transactionCost,_that.startDate,_that.endDate,_that.notificationMethod,_that.isActive);case _:
   return orElse();
 
 }
@@ -446,10 +447,10 @@ return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transa
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int fundTransactionId,  int fundId,  String fundName,  double transactionCost,  String startDate,  String endDate,  bool isActive)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int fundTransactionId,  int fundId,  String fundName,  double transactionCost,  String startDate,  String? endDate,  String notificationMethod,  bool isActive)  $default,) {final _that = this;
 switch (_that) {
 case _FundTransaction():
-return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transactionCost,_that.startDate,_that.endDate,_that.isActive);case _:
+return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transactionCost,_that.startDate,_that.endDate,_that.notificationMethod,_that.isActive);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -466,10 +467,10 @@ return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transa
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int fundTransactionId,  int fundId,  String fundName,  double transactionCost,  String startDate,  String endDate,  bool isActive)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int fundTransactionId,  int fundId,  String fundName,  double transactionCost,  String startDate,  String? endDate,  String notificationMethod,  bool isActive)?  $default,) {final _that = this;
 switch (_that) {
 case _FundTransaction() when $default != null:
-return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transactionCost,_that.startDate,_that.endDate,_that.isActive);case _:
+return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transactionCost,_that.startDate,_that.endDate,_that.notificationMethod,_that.isActive);case _:
   return null;
 
 }
@@ -481,7 +482,7 @@ return $default(_that.fundTransactionId,_that.fundId,_that.fundName,_that.transa
 
 
 class _FundTransaction implements FundTransaction {
-  const _FundTransaction({required this.fundTransactionId, required this.fundId, required this.fundName, required this.transactionCost, required this.startDate, required this.endDate, required this.isActive});
+  const _FundTransaction({required this.fundTransactionId, required this.fundId, required this.fundName, required this.transactionCost, required this.startDate, this.endDate, required this.notificationMethod, required this.isActive});
   
 
 @override final  int fundTransactionId;
@@ -489,7 +490,8 @@ class _FundTransaction implements FundTransaction {
 @override final  String fundName;
 @override final  double transactionCost;
 @override final  String startDate;
-@override final  String endDate;
+@override final  String? endDate;
+@override final  String notificationMethod;
 @override final  bool isActive;
 
 /// Create a copy of FundTransaction
@@ -502,16 +504,16 @@ _$FundTransactionCopyWith<_FundTransaction> get copyWith => __$FundTransactionCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FundTransaction&&(identical(other.fundTransactionId, fundTransactionId) || other.fundTransactionId == fundTransactionId)&&(identical(other.fundId, fundId) || other.fundId == fundId)&&(identical(other.fundName, fundName) || other.fundName == fundName)&&(identical(other.transactionCost, transactionCost) || other.transactionCost == transactionCost)&&(identical(other.startDate, startDate) || other.startDate == startDate)&&(identical(other.endDate, endDate) || other.endDate == endDate)&&(identical(other.isActive, isActive) || other.isActive == isActive));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FundTransaction&&(identical(other.fundTransactionId, fundTransactionId) || other.fundTransactionId == fundTransactionId)&&(identical(other.fundId, fundId) || other.fundId == fundId)&&(identical(other.fundName, fundName) || other.fundName == fundName)&&(identical(other.transactionCost, transactionCost) || other.transactionCost == transactionCost)&&(identical(other.startDate, startDate) || other.startDate == startDate)&&(identical(other.endDate, endDate) || other.endDate == endDate)&&(identical(other.notificationMethod, notificationMethod) || other.notificationMethod == notificationMethod)&&(identical(other.isActive, isActive) || other.isActive == isActive));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,fundTransactionId,fundId,fundName,transactionCost,startDate,endDate,isActive);
+int get hashCode => Object.hash(runtimeType,fundTransactionId,fundId,fundName,transactionCost,startDate,endDate,notificationMethod,isActive);
 
 @override
 String toString() {
-  return 'FundTransaction(fundTransactionId: $fundTransactionId, fundId: $fundId, fundName: $fundName, transactionCost: $transactionCost, startDate: $startDate, endDate: $endDate, isActive: $isActive)';
+  return 'FundTransaction(fundTransactionId: $fundTransactionId, fundId: $fundId, fundName: $fundName, transactionCost: $transactionCost, startDate: $startDate, endDate: $endDate, notificationMethod: $notificationMethod, isActive: $isActive)';
 }
 
 
@@ -522,7 +524,7 @@ abstract mixin class _$FundTransactionCopyWith<$Res> implements $FundTransaction
   factory _$FundTransactionCopyWith(_FundTransaction value, $Res Function(_FundTransaction) _then) = __$FundTransactionCopyWithImpl;
 @override @useResult
 $Res call({
- int fundTransactionId, int fundId, String fundName, double transactionCost, String startDate, String endDate, bool isActive
+ int fundTransactionId, int fundId, String fundName, double transactionCost, String startDate, String? endDate, String notificationMethod, bool isActive
 });
 
 
@@ -539,14 +541,15 @@ class __$FundTransactionCopyWithImpl<$Res>
 
 /// Create a copy of FundTransaction
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? fundTransactionId = null,Object? fundId = null,Object? fundName = null,Object? transactionCost = null,Object? startDate = null,Object? endDate = null,Object? isActive = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? fundTransactionId = null,Object? fundId = null,Object? fundName = null,Object? transactionCost = null,Object? startDate = null,Object? endDate = freezed,Object? notificationMethod = null,Object? isActive = null,}) {
   return _then(_FundTransaction(
 fundTransactionId: null == fundTransactionId ? _self.fundTransactionId : fundTransactionId // ignore: cast_nullable_to_non_nullable
 as int,fundId: null == fundId ? _self.fundId : fundId // ignore: cast_nullable_to_non_nullable
 as int,fundName: null == fundName ? _self.fundName : fundName // ignore: cast_nullable_to_non_nullable
 as String,transactionCost: null == transactionCost ? _self.transactionCost : transactionCost // ignore: cast_nullable_to_non_nullable
 as double,startDate: null == startDate ? _self.startDate : startDate // ignore: cast_nullable_to_non_nullable
-as String,endDate: null == endDate ? _self.endDate : endDate // ignore: cast_nullable_to_non_nullable
+as String,endDate: freezed == endDate ? _self.endDate : endDate // ignore: cast_nullable_to_non_nullable
+as String?,notificationMethod: null == notificationMethod ? _self.notificationMethod : notificationMethod // ignore: cast_nullable_to_non_nullable
 as String,isActive: null == isActive ? _self.isActive : isActive // ignore: cast_nullable_to_non_nullable
 as bool,
   ));

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$FundResponse {
 
- int get id; String get name; String get category; int get minimumQuantity;
+ int get id; String get name; String get category; double get minimumQuantity;
 
 
 
@@ -117,7 +117,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String name,  String category,  int minimumQuantity)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String name,  String category,  double minimumQuantity)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _FundResponse() when $default != null:
 return $default(_that.id,_that.name,_that.category,_that.minimumQuantity);case _:
@@ -138,7 +138,7 @@ return $default(_that.id,_that.name,_that.category,_that.minimumQuantity);case _
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String name,  String category,  int minimumQuantity)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String name,  String category,  double minimumQuantity)  $default,) {final _that = this;
 switch (_that) {
 case _FundResponse():
 return $default(_that.id,_that.name,_that.category,_that.minimumQuantity);case _:
@@ -158,7 +158,7 @@ return $default(_that.id,_that.name,_that.category,_that.minimumQuantity);case _
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String name,  String category,  int minimumQuantity)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String name,  String category,  double minimumQuantity)?  $default,) {final _that = this;
 switch (_that) {
 case _FundResponse() when $default != null:
 return $default(_that.id,_that.name,_that.category,_that.minimumQuantity);case _:
@@ -179,7 +179,7 @@ class _FundResponse extends FundResponse {
 @override final  int id;
 @override final  String name;
 @override final  String category;
-@override final  int minimumQuantity;
+@override final  double minimumQuantity;
 
 
 

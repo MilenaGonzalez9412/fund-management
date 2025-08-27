@@ -6,7 +6,7 @@ import 'package:fund_management/features/user/data/models/user_response.dart';
 class UserDataSourceApi implements UserDataSource {
   @override
   Future<User> getUser() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 1));
 
     return UserResponse.fromJson(userResponseMock).toEntity();
   }

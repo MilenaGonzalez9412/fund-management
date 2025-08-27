@@ -6,7 +6,7 @@ import 'package:fund_management/features/transaction_history/data/models/transac
 class TransactionHistoryDataSourceApi implements TransactionHistoryDataSource {
   @override
   Future<TransactionHistory> getHistory() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 1));
 
     return TransactionHistoryResponse.fromJson(
       transactionHistoryMock,

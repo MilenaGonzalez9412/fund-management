@@ -8,6 +8,6 @@ abstract class Fund with _$Fund {
     required int id,
     required String name,
     required String category,
-    required int minimumQuantity,
+    required double minimumQuantity,
   }) = _Fund;
 }

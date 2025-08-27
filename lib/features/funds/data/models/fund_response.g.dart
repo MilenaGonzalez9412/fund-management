@@ -11,5 +11,5 @@ _FundResponse _$FundResponseFromJson(Map<String, dynamic> json) =>
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
       category: json['category'] as String,
-      minimumQuantity: (json['minimumQuantity'] as num).toInt(),
+      minimumQuantity: (json['minimumQuantity'] as num).toDouble(),
     );

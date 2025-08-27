@@ -3,5 +3,5 @@ final userResponseMock = {
   'name': 'John',
   'lastName': 'Doe',
   'balance': 500000.00,
-  'currentAffiliation': 2,
+  'currentAffiliation': 0,
 };

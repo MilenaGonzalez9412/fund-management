@@ -9,7 +9,7 @@ final userProvider = FutureProvider<User>(
 );
 
 final fundProvider = FutureProvider<List<Fund>>(
-  (ref) => ref.watch(fundManagementRepositoryProvider).getFunds(),
+  (ref) => ref.watch(fundSubscriptionRepositoryProvider).getFunds(),
 );
 
 final fundByIdProvider = Provider.family<Fund?, int>((ref, id) {

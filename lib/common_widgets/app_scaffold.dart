@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fund_management/config/theme/custom_colors.dart';
 import 'package:fund_management/config/theme/extensions.dart';
 
 import '../config/theme/app_theme.dart';
@@ -11,14 +12,16 @@ class AppScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: CustomColors.platinum,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: AppTheme().appTheme().primaryColor,
         title: Text(
-          'BTG',
-          style: TextStyle(color: context.colorScheme.onPrimary),
+          'Manejo de Fondos (FPV/FIC) para clientes BTG',
+          style: TextStyle(color: context.colorScheme.onError),
         ),
       ),
-      body: body,
+      body: Padding(padding: const EdgeInsets.all(10), child: body),
     );
   }
 }

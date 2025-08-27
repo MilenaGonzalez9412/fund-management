@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Fund {
 
- int get id; String get name; String get category; int get minimumQuantity;
+ int get id; String get name; String get category; double get minimumQuantity;
 /// Create a copy of Fund
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -45,7 +45,7 @@ abstract mixin class $FundCopyWith<$Res>  {
   factory $FundCopyWith(Fund value, $Res Function(Fund) _then) = _$FundCopyWithImpl;
 @useResult
 $Res call({
- int id, String name, String category, int minimumQuantity
+ int id, String name, String category, double minimumQuantity
 });
 
 
@@ -68,7 +68,7 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,category: null == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
 as String,minimumQuantity: null == minimumQuantity ? _self.minimumQuantity : minimumQuantity // ignore: cast_nullable_to_non_nullable
-as int,
+as double,
   ));
 }
 
@@ -153,7 +153,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String name,  String category,  int minimumQuantity)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String name,  String category,  double minimumQuantity)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Fund() when $default != null:
 return $default(_that.id,_that.name,_that.category,_that.minimumQuantity);case _:
@@ -174,7 +174,7 @@ return $default(_that.id,_that.name,_that.category,_that.minimumQuantity);case _
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String name,  String category,  int minimumQuantity)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String name,  String category,  double minimumQuantity)  $default,) {final _that = this;
 switch (_that) {
 case _Fund():
 return $default(_that.id,_that.name,_that.category,_that.minimumQuantity);case _:
@@ -194,7 +194,7 @@ return $default(_that.id,_that.name,_that.category,_that.minimumQuantity);case _
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String name,  String category,  int minimumQuantity)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String name,  String category,  double minimumQuantity)?  $default,) {final _that = this;
 switch (_that) {
 case _Fund() when $default != null:
 return $default(_that.id,_that.name,_that.category,_that.minimumQuantity);case _:
@@ -215,7 +215,7 @@ class _Fund implements Fund {
 @override final  int id;
 @override final  String name;
 @override final  String category;
-@override final  int minimumQuantity;
+@override final  double minimumQuantity;
 
 /// Create a copy of Fund
 /// with the given fields replaced by the non-null parameter values.
@@ -247,7 +247,7 @@ abstract mixin class _$FundCopyWith<$Res> implements $FundCopyWith<$Res> {
   factory _$FundCopyWith(_Fund value, $Res Function(_Fund) _then) = __$FundCopyWithImpl;
 @override @useResult
 $Res call({
- int id, String name, String category, int minimumQuantity
+ int id, String name, String category, double minimumQuantity
 });
 
 
@@ -270,7 +270,7 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,category: null == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
 as String,minimumQuantity: null == minimumQuantity ? _self.minimumQuantity : minimumQuantity // ignore: cast_nullable_to_non_nullable
-as int,
+as double,
   ));
 }
 

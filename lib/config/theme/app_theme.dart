@@ -18,8 +18,8 @@ class AppTheme {
     dataTableTheme: DataTableThemeData(
       headingRowHeight: 75,
       headingRowColor: WidgetStatePropertyAll(CustomColors.coolGray),
-      headingTextStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
-      dataTextStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+      headingTextStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+      dataTextStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey, width: 1),
         borderRadius: BorderRadius.circular(8),
