@@ -15,6 +15,16 @@ class AppTheme {
       surface: CustomColors.platinum,
       onSurface: CustomColors.licorice,
     ),
+    dataTableTheme: DataTableThemeData(
+      headingRowHeight: 75,
+      headingRowColor: WidgetStatePropertyAll(CustomColors.coolGray),
+      headingTextStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+      dataTextStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey, width: 1),
+        borderRadius: BorderRadius.circular(8),
+      ),
+    ),
     textTheme: const TextTheme(
       headlineLarge: TextStyle(fontSize: 36, fontWeight: FontWeight.w600),
       headlineMedium: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
